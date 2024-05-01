@@ -13,6 +13,7 @@ import java.util.Arrays;
 public class App {
     public static void main(String[] args) {
         
+        //Variavéis de Ambiente com os dados para o serviço do Azure
         String endpoint = System.getenv("VISION_ENDPOINT");
         String key = System.getenv("VISION_KEY");
 
@@ -55,6 +56,7 @@ public class App {
         System.out.println(" Pessoas:");
         for (DetectedPerson person : result.getPeople().getValues()) {
 
+            
             if(person.getConfidence() >= 0.5){
                 System.out.println("   Posição "
                     + person.getBoundingBox() + ", Precisão " + String.format("%.4f", person.getConfidence()));
